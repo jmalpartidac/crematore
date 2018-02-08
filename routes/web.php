@@ -24,3 +24,12 @@ Route::get('broma/{nombre}/{apodo?}', function($nombre, $apodo = null) {
 		return "hola {$nombre}, no tienes apodo eres un nood";
 	}
 });
+
+Route::get('texto/{comentario?}', function($comentario = null) {
+
+	if ($comentario) {
+		return "el comentario fue el siguiente {$comentario}";
+	}else{
+		return "no se escribio ningun comentario";
+	}
+});
