@@ -21,6 +21,6 @@ Route::get('broma/{nombre}/{apodo?}', function($nombre, $apodo = null) {
 	if ($apodo) {
 		return "hola {$nombre}, tu apodo es {$apodo}";
 	}else{
-		return "hola {$nombre}, no tienes apodo";
+		return "hola {$nombre}, no tienes apodo eres un nood";
 	}
 });
