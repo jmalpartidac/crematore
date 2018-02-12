@@ -4,19 +4,17 @@ Route::get('/', function() {
 	return 'hola';
 });
 
-Route::get('/usuario', function() {
-	return 'usuarios';
-});
+Route::get('/usuarios', 'pruebaController@verusuario');
 
-Route::get('/usuario/{id}', function($id) {
-	return "usuario con id {$id}";
-})->where('id', '[0-9]+');
+Route::get('/usuario/{id}', 'pruebaController@detalleusuario')->where('id', '[0-9]+');
 
 Route::get('/usuario/nuevo', function() {
 	return 'crear nuevo usuario';
 });
 
 Route::get('broma/{nombre}/{apodo?}', function($nombre, $apodo = null) {
+
+	$nombre = ucfirst($nombre);
 
 	if ($apodo) {
 		return "hola {$nombre}, tu apodo es {$apodo}";
